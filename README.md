@@ -1,16 +1,25 @@
-### Hi there 👋
+<h3>
+    
+```python
+from __future__ import annotations
 
-<!--
-**gokure/gokure** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+import json
+from dataclasses import asdict, dataclass
 
-Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+@dataclass
+class Skill:
+    languages : tuple[str, ...] = ("PHP", "Python", "Ruby", "Node.js", "Go", "Java")
+    databases : tuple[str, ...] = ("MySQL", "MongoDB", "Redis", "Elasticsearch")
+    frameworks: tuple[str, ...] = ("Laravel", "Hyperf", "Flask", "Django", "Vue.js")
+    misc      : tuple[str, ...] = ("Linux", "Nginx", "Docker", "CI/CD", "RESTful", "GraphQL", "ES6", "TypeScript")
+    ongoing   : tuple[str, ...] = ("Gin", "Spring Boot", "Coroutine")
+
+    def jsonify(self) -> str:
+        return json.dumps(asdict(self), indent=4)
+
+
+skill = Skill()
+print(skill.jsonify())
+```
+</h3>
