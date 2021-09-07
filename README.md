@@ -3,6 +3,6 @@
 ```python
 me = Person()
 while me.awake():
-    me.code()
+    me.coding()
 ```
 </h3>
